@@ -61,7 +61,7 @@ Abra seu terminal, navegue até o diretório onde você quer salvar o projeto e 
 ```bash
 # 1. Clone este repositório
 # (Copie a URL HTTPS clicando no botão "<> Code" no topo desta página)
-git clone [https://github.com/jonatas-renan/Task-Tracker.git](https://github.com/jonatas-renan/Task-Tracker.git)
+git clone https://github.com/jonatas-renan/Task-Tracker.git
 
 # 2. Navegue para o diretório do projeto
 cd Task-Tracker
@@ -106,16 +106,24 @@ py task_tracker_main.py list to-do
 # ----------------------------------
 O arquivo tasks.json será criado (ou atualizado) automaticamente no mesmo diretório sempre que você modificar uma tarefa.
 
-🧩 Tecnologias Utilizadas
-Tecnologia	Descrição
-Python 3	Linguagem principal usada no projeto
-Módulo json	Usado para leitura e escrita dos dados das tarefas
-Módulo os	Verifica a existência de arquivos e diretórios
-Módulo datetime	Gera as datas de criação e atualização das tarefas
-Módulo sys Usado para ler os argumentos da linha de comando 
-CLI (Command Line Interface)	Permite interagir com o programa via terminal
+```
+---
 
-📘 Conhecimentos Adquiridos
+## 🧩 Tecnologias Utilizadas
+
+| Tecnologia | Descrição |
+|:---|:---|
+| Python 3 | Linguagem principal usada no projeto |
+| Módulo json | Usado para leitura e escrita dos dados das tarefas |
+| Módulo os | Verifica a existência de arquivos e diretórios |
+| Módulo datetime | Gera as datas de criação e atualização das tarefas |
+| Módulo sys | Usado para ler os argumentos da linha de comando |
+| CLI (Command Line Interface) | Permite interagir com o programa via terminal |
+
+---
+
+## 📘 Conhecimentos Adquiridos
+
 Durante o desenvolvimento deste projeto, foram aplicados e reforçados os seguintes conceitos:
 
 ✅ Manipulação de arquivos JSON (leitura, escrita e validação)
@@ -132,7 +140,9 @@ Durante o desenvolvimento deste projeto, foram aplicados e reforçados os seguin
 
 ✅ Implementação de um sistema de status de tarefas (“to-do”, “in-progress”, “done”)
 
-🚧 Implementações Futuras (Roadmap)
+---
+
+## 🚧 Implementações Futuras (Roadmap)
 
 O projeto ainda pode evoluir com novas funcionalidades.
 Aqui estão algumas ideias planejadas para versões futuras:
@@ -141,7 +151,7 @@ Aqui estão algumas ideias planejadas para versões futuras:
 
 🔹 Filtrar e ordenar tarefas por data de criação, status ou prioridade.
 
-🔹 Adicionar suporte a prazos (deadlines) com alertas visuais.
+🔹 Adicionar suporte a prazos (deadlines) com alertas visiais.
 
 🔹 Exportar tarefas para CSV ou TXT.
 
