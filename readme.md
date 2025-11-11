@@ -61,7 +61,7 @@ Abra seu terminal, navegue até o diretório onde você quer salvar o projeto e 
 ```bash
 # 1. Clone este repositório
 # (Copie a URL HTTPS clicando no botão "<> Code" no topo desta página)
-git clone https://github.com/jonatas-renan/Task-Tracker.git
+git clone https://github.com/jonatas-renan/Task-Tracker
 
 # 2. Navegue para o diretório do projeto
 cd Task-Tracker
