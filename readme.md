@@ -1,4 +1,4 @@
-# ✅ Task Tracker (CLI) - Gerenciador de Tarefas no Terminal
+# ✅ Task Tracker (CLI) - Gerenciador de Tarefas no Terminal 
 
 Um simples e eficiente **gerenciador de tarefas via linha de comando (CLI)**, desenvolvido em **Python**, que permite adicionar, listar, atualizar, remover e alterar o status de tarefas.  
 Os dados são salvos em um arquivo **JSON**, garantindo persistência entre execuções.
@@ -33,7 +33,7 @@ O sistema oferece os seguintes comandos:
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto - [URL do projeto](https://github.com/jonatas-renan/Task-Tracker)
 
 task_cli/
 │
@@ -61,7 +61,7 @@ Abra seu terminal, navegue até o diretório onde você quer salvar o projeto e 
 ```bash
 # 1. Clone este repositório
 # (Copie a URL HTTPS clicando no botão "<> Code" no topo desta página)
-git clone https://github.com/jonatas-renan/Task-Tracker
+git clone [https://github.com/jonatas-renan/Task-Tracker](https://github.com/jonatas-renan/Task-Tracker)
 
 # 2. Navegue para o diretório do projeto
 cd Task-Tracker
