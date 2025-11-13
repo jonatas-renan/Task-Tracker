@@ -7,7 +7,7 @@ Projeto de desenvolvimento full-stack que simula um sistema de gerenciamento de 
 O objetivo deste projeto foi aplicar conhecimentos de desenvolvimento back-end e front-end para construir uma aplicação web funcional (Full-Stack).
 
 **Requisitos do Back-end (API):**
-* Desenvolver uma API RESTful usando Python e o framework Flask.
+* Desenvolver uma API usando Python e o framework Flask.
 * Criar endpoints para todas as operações CRUD (Criar, Ler, Atualizar, Deletar).
 * Utilizar o método `fetch` do JavaScript para consumir os endpoints da API.
 * Lidar com requisições HTTP (GET, POST, PATCH, DELETE).
@@ -32,7 +32,7 @@ Este projeto é dividido em duas partes principais: o servidor (back-end) e o cl
 * `functions.py`
     * **Função:** Módulo auxiliar (a "cozinha"). Contém as funções que `app.py` usa para manipular os dados, como `ler_json()`, `adicionar_tarefa()`, etc.
 
-* `data/tasks.json`
+* `tasks.json`
     * **Função:** Nosso "banco de dados" temporário. É um arquivo de texto estruturado onde todas as tarefas são fisicamente armazenadas.
 
 * `templates/index.html`
@@ -48,7 +48,7 @@ Este projeto é dividido em duas partes principais: o servidor (back-end) e o cl
 
 ## 💰 Funcionalidades da API (Endpoints)
 
-A API RESTful oferece os seguintes endpoints para gerenciar tarefas:
+A API oferece os seguintes endpoints para gerenciar tarefas:
 
 * **`GET /tasks`**
     * **Descrição:** Lista todas as tarefas cadastradas.
@@ -69,6 +69,9 @@ A API RESTful oferece os seguintes endpoints para gerenciar tarefas:
 * **`GET /`**
     * **Descrição:** Renderiza a página web principal (`index.html`) para o usuário.
 
+* **`GET /help`**
+    * **Descrição:** Serve como uma "página de boas-vindas" ou "ajuda" para quem acessar a API.
+
 ---
 
 ## 🛠 Tecnologias Utilizadas
@@ -77,6 +80,7 @@ A API RESTful oferece os seguintes endpoints para gerenciar tarefas:
     * ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
     * ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
     * ![Flask-CORS](https://img.shields.io/badge/Flask_CORS-F05032?style=for-the-badge&logo=flask&logoColor=white)
+    * ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
 * **Front-End:**
     * ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
     * ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
