@@ -41,16 +41,6 @@ def main():
                     return
             listar_tarefas(filtro)
 
-        # Atualizar descricao da tarefa
-        elif comando == "update":
-            if len(argumentos_comando) < 2:
-                print("❌ Erro: 'update' precisa de um ID e uma nova descrição.")
-                print("   Exemplo: python task_cli.py update 1 \"Novo texto da tarefa\"")
-            else:
-                task_id = argumentos_comando[0]
-                nova_descricao = " ".join(argumentos_comando[1:])
-                atualizar_tarefa(task_id, nova_descricao)
-
         elif comando == "delete":
             if not argumentos_comando:
                 print("❌ Erro: 'delete' precisa de um ID.")
@@ -59,21 +49,31 @@ def main():
                 task_id = argumentos_comando[0]
                 deletar_tarefa(task_id)
 
-        # Marcar alguma tarefa em andamento
+            # Marcar tarefa em andamento
         elif comando == "mark-in-progress":
             if not argumentos_comando:
                 print("❌ Erro: 'mark-in-progress' precisa de um ID.")
             else:
                 task_id = argumentos_comando[0]
-                marcar_status(task_id, "in-progress")
+                atualizar_tarefa(task_id, {"status": "in-progress"})
 
-        # Marcar alguma tarefa como feito
+            # Marcar tarefa como feita
         elif comando == "mark-done":
             if not argumentos_comando:
                 print("❌ Erro: 'mark-done' precisa de um ID.")
             else:
                 task_id = argumentos_comando[0]
-                marcar_status(task_id, "done")
+                atualizar_tarefa(task_id, {"status": "done"})
+
+            # Atualizar descrição da tarefa
+        elif comando == "update":
+            if len(argumentos_comando) < 2:
+                print("❌ Erro: 'update' precisa de um ID e uma nova descrição.")
+                print("   Exemplo: python task_cli.py update 1 \"Novo texto da tarefa\"")
+            else:
+                task_id = argumentos_comando[0]
+                nova_descricao = " ".join(argumentos_comando[1:])
+                atualizar_tarefa(task_id, {"description": nova_descricao})
         
         elif comando == "help":
              mostrar_ajuda()

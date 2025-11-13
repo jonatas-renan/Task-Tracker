@@ -1,164 +1,130 @@
-# ✅ Task Tracker (CLI) - Gerenciador de Tarefas no Terminal
+# 🚀 API de Task Tracker (Gerenciador de Tarefas)
 
-Um simples e eficiente **gerenciador de tarefas via linha de comando (CLI)**, desenvolvido em **Python**, que permite adicionar, listar, atualizar, remover e alterar o status de tarefas.  
-Os dados são salvos em um arquivo **JSON**, garantindo persistência entre execuções.
+Projeto de desenvolvimento full-stack que simula um sistema de gerenciamento de tarefas (To-Do list), construído com um back-end em Python (Flask) e um front-end em HTML, CSS e JavaScript.
 
----
+🎯 Objetivo
 
-## 🧠 Descrição do Projeto
+O objetivo deste projeto foi aplicar conhecimentos de desenvolvimento back-end e front-end para construir uma aplicação web funcional (Full-Stack).
 
-O **Task Tracker** é uma aplicação de terminal que simula um sistema de gerenciamento de tarefas (to-do list).  
-Ele é ideal para quem deseja organizar suas atividades diretamente no terminal, sem precisar de interfaces gráficas.
+**Requisitos do Back-end (API):**
+* Desenvolver uma API RESTful usando Python e o framework Flask.
+* Criar endpoints para todas as operações CRUD (Criar, Ler, Atualizar, Deletar).
+* Utilizar o método `fetch` do JavaScript para consumir os endpoints da API.
+* Lidar com requisições HTTP (GET, POST, PATCH, DELETE).
+* Gerenciar a persistência de dados (atualmente em um arquivo JSON).
+* Configurar CORS para permitir a comunicação entre o front-end e o back-end.
 
-O projeto foi desenvolvido com foco em **colocar em prática meus conhecimentos em Python**, **boas práticas de programação**, **manipulação de arquivos JSON**, **tratamento de exceções**, e **estruturação modular em Python**.
-
----
-
-## ⚙️ Funcionalidades
-
-O sistema oferece os seguintes comandos:
-
-| Comando | Descrição | Exemplo de uso |
-|----------|------------|----------------|
-| `add <descrição>` | Adiciona uma nova tarefa | `python task_cli.py add "Estudar Python"` |
-| `list` | Lista todas as tarefas | `python task_cli.py list` |
-| `list to-do` | Lista apenas tarefas pendentes | `python task_cli.py list to-do` |
-| `list in-progress` | Lista apenas tarefas em andamento | `python task_cli.py list in-progress` |
-| `list done` | Lista apenas tarefas concluídas | `python task_cli.py list done` |
-| `update <id> <nova descrição>` | Atualiza a descrição de uma tarefa | `python task_cli.py update 1 "Estudar Python por 2h"` |
-| `delete <id>` | Remove uma tarefa pelo ID | `python task_cli.py delete 2` |
-| `mark-in-progress <id>` | Marca a tarefa como “em andamento” | `python task_cli.py mark-in-progress 3` |
-| `mark-done <id>` | Marca a tarefa como “concluída” | `python task_cli.py mark-done 1` |
-| `help` | Mostra a lista de comandos disponíveis | `python task_cli.py help` |
+**Requisitos do Front-end (Interface):**
+* Criar uma interface de usuário (UI) interativa com HTML, CSS e JavaScript.
+* Consumir dados da API de forma assíncrona (sem recarregar a página).
+* Permitir ao usuário adicionar, deletar e atualizar tarefas.
+* Implementar um sistema de filtros para visualizar tarefas por status.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🗺️ Mapa interno dos arquivos
 
-task_cli/
-│
-├── task_tracker_main.py # Arquivo principal que gerencia os comandos da CLI
-├── functions.py # Contém todas as funções auxiliares do sistema
-├── tasks.json # Arquivo onde as tarefas são armazenadas (criado automaticamente)
-└── README.md # Este arquivo de documentação
+Este projeto é dividido em duas partes principais: o servidor (back-end) e o cliente (front-end).
 
-## ⚙️ Instalação e Execução
+* `app.py`
+    * **Função:** O cérebro da aplicação. Este é o servidor Flask que define todas as rotas da API (ex: `/tasks`, `/tasks/<id>`) e lida com as requisições HTTP.
 
-Siga estes 3 passos para configurar e rodar o projeto localmente.
+* `functions.py`
+    * **Função:** Módulo auxiliar (a "cozinha"). Contém as funções que `app.py` usa para manipular os dados, como `ler_json()`, `adicionar_tarefa()`, etc.
 
-### 1. Pré-requisitos
+* `data/tasks.json`
+    * **Função:** Nosso "banco de dados" temporário. É um arquivo de texto estruturado onde todas as tarefas são fisicamente armazenadas.
 
-Antes de começar, garanta que você tenha os seguintes softwares instalados:
-* **[Python 3](https://www.python.org/downloads/)**
-* **[Git](https://git-scm.com/downloads)**
+* `templates/index.html`
+    * **Função:** A estrutura (esqueleto) da página web que o usuário vê no navegador.
 
----
+* `static/style.css`
+    * **Função:** O arquivo de estilização (a "decoração") da página web.
 
-### 2. Instalação (Clone)
-
-Abra seu terminal, navegue até o diretório onde você quer salvar o projeto e execute os comandos abaixo.
-
-```bash
-# 1. Clone este repositório
-# (Copie a URL HTTPS clicando no botão "<> Code" no topo desta página)
-git clone https://github.com/jonatas-renan/Task-Tracker.git
-
-# 2. Navegue para o diretório do projeto
-cd Task-Tracker
-Todos os comandos a partir de agora devem ser executados de dentro da pasta Task-Tracker.
-
-3. Guia de Comandos (Uso)
-Este programa é executado diretamente no terminal. O arquivo principal é o task_tracker_main.py.
-
-Nota: Use py (no Windows) ou python3 (no macOS/Linux) para executar os comandos.
-
-Exemplo de Fluxo de Trabalho:
-Bash
-
-# 1. Peça ajuda para ver todos os comandos disponíveis
-py task_tracker_main.py help
-
-# 2. Adicione sua primeira tarefa
-py task_tracker_main.py add "Criar o README do projeto"
-# Saída: ✅ Tarefa adicionada com sucesso (ID: 1)
-
-# 3. Adicione outra tarefa
-py task_tracker_main.py add "Enviar para o GitHub"
-# Saída: ✅ Tarefa adicionada com sucesso (ID: 2)
-
-# 4. Liste todas as suas tarefas
-py task_tracker_main.py list
-# Saída:
-# --- 📋 Suas Tarefas (all) ---
-#   [1] (to-do) - Criar o README do projeto
-#   [2] (to-do) - Enviar para o GitHub
-# ----------------------------------
-
-# 5. Marque a primeira tarefa como concluída
-py task_tracker_main.py mark-done 1
-# Saída: ✅ Status da tarefa 1 modificado com sucesso.
-
-# 6. Liste apenas as tarefas pendentes
-py task_tracker_main.py list to-do
-# Saída:
-# --- 📋 Suas Tarefas (to-do) ---
-#   [2] (to-do) - Enviar para o GitHub
-# ----------------------------------
-O arquivo tasks.json será criado (ou atualizado) automaticamente no mesmo diretório sempre que você modificar uma tarefa.
-
-```
----
-
-## 🧩 Tecnologias Utilizadas
-
-| Tecnologia | Descrição |
-|:---|:---|
-| Python 3 | Linguagem principal usada no projeto |
-| Módulo json | Usado para leitura e escrita dos dados das tarefas |
-| Módulo os | Verifica a existência de arquivos e diretórios |
-| Módulo datetime | Gera as datas de criação e atualização das tarefas |
-| Módulo sys | Usado para ler os argumentos da linha de comando |
-| CLI (Command Line Interface) | Permite interagir com o programa via terminal |
+* `static/script.js`
+    * **Função:** O "cérebro" do front-end. Este arquivo contém todo o JavaScript que se comunica com a API em Flask, pede os dados e desenha as tarefas na tela.
 
 ---
 
-## 📘 Conhecimentos Adquiridos
+## 💰 Funcionalidades da API (Endpoints)
 
-Durante o desenvolvimento deste projeto, foram aplicados e reforçados os seguintes conceitos:
+A API RESTful oferece os seguintes endpoints para gerenciar tarefas:
 
-✅ Manipulação de arquivos JSON (leitura, escrita e validação)
+* **`GET /tasks`**
+    * **Descrição:** Lista todas as tarefas cadastradas.
+    * **Filtro:** Aceita um parâmetro de consulta (query parameter) para filtrar por status.
+    * **Exemplo:** `GET /tasks?status=done` (Lista apenas as tarefas concluídas).
 
-✅ Boas práticas de organização de código em módulos (import/export)
+* **`POST /tasks`**
+    * **Descrição:** Cria uma nova tarefa. Requer um JSON no corpo da requisição.
+    * **Corpo:** `{ "description": "Nova tarefa aqui" }`
 
-✅ Uso de tratamento de exceções (try/except) para evitar erros em tempo de execução
+* **`PATCH /tasks/<int:task_id>`**
+    * **Descrição:** Atualiza parcialmente uma tarefa existente (ex: mudar o status).
+    * **Corpo:** `{ "status": "in-progress" }`
 
-✅ Uso do sys.argv para capturar argumentos via terminal
+* **`DELETE /tasks/<int:task_id>`**
+    * **Descrição:** Deleta uma tarefa específica com base no seu ID.
 
-✅ Estruturação de uma interface de linha de comando (CLI) funcional
-
-✅ Criação de funções com responsabilidade única
-
-✅ Implementação de um sistema de status de tarefas (“to-do”, “in-progress”, “done”)
+* **`GET /`**
+    * **Descrição:** Renderiza a página web principal (`index.html`) para o usuário.
 
 ---
 
-## 🚧 Implementações Futuras (Roadmap)
+## 🛠 Tecnologias Utilizadas
 
-O projeto ainda pode evoluir com novas funcionalidades.
-Aqui estão algumas ideias planejadas para versões futuras:
+* **Back-End:**
+    * ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+    * ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+    * ![Flask-CORS](https://img.shields.io/badge/Flask_CORS-F05032?style=for-the-badge&logo=flask&logoColor=white)
+* **Front-End:**
+    * ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+    * ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+    * ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-🔹 Adicionar campo de prioridade (baixa, média, alta) às tarefas.
+---
 
-🔹 Filtrar e ordenar tarefas por data de criação, status ou prioridade.
+## 🚀 Como Executar o Projeto
 
-🔹 Adicionar suporte a prazos (deadlines) com alertas visiais.
+Para executar este projeto localmente, você precisará ter o **Python 3** instalado.
 
-🔹 Exportar tarefas para CSV ou TXT.
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+    cd seu-repositorio
+    ```
 
-🔹 Adicionar suporte a cores no terminal (usando a biblioteca colorama).
+2.  **Crie e ative um ambiente virtual** (Recomendado):
+    ```bash
+    # Para Windows
+    python -m venv venv
+    venv\Scripts\activate
 
-🔹 Implementar testes automatizados (pytest) para garantir estabilidade.
+    # Para Mac/Linux
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
 
-🔹 Criar interface web simples (Flask) que use o mesmo arquivo tasks.json.
+3.  **Instale as dependências (Flask):**
+    ```bash
+    pip install Flask Flask-CORS
+    ```
 
-🔹 Internacionalização (i18n) — suporte a múltiplos idiomas.
+4.  **Execute o servidor (Back-end):**
+    ```bash
+    python app.py
+    ```
+    * O servidor Flask estará rodando em `http://127.0.0.1:5000/`.
+
+5.  **Acesse o Front-End:**
+    * Abra seu navegador e acesse a URL `http://127.0.0.1:5000/`.
+    * A interface web (`index.html`) será carregada e você poderá começar a usar o Task Tracker.
+
+---
+
+## 📂 Sugestões de melhorias / futuras implementações
+
+* **Migração para Banco de Dados:** Substituir o `tasks.json` por um banco de dados real (como **SQLite** ou **PostgreSQL**) para permitir persistência de dados de forma mais segura e escalável.
+* **Autenticação de Usuários:** Implementar um sistema de login e cadastro (com JWT) para que cada usuário tenha sua própria lista de tarefas privada.
+* **Melhorar o Front-End:** Utilizar um framework moderno (como React ou Vue.js) para criar uma interface mais dinâmica e componentizada.
+* **Testes:** Adicionar testes unitários para a API.

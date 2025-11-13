@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>📝 Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Gerenciador de Tarefas</h1>
+    <p>Adicione, filtre e acompanhe suas tarefas facilmente!</p>
+
+    <div class="input-area">
+      <input id="task-input" placeholder="Digite uma nova tarefa...">
+      <button id="add-button">Adicionar</button>
+    </div>
+
+    <div class="filter-area">
+      <button id="filter-all">Todas</button>
+      <button id="filter-todo">Pendentes</button>
+      <button id="filter-progress">Em Progresso</button>
+      <button id="filter-done">Concluídas</button>
+    </div>
+
+    <div id="task-list" class="task-list-container">
+      <p>Carregando tarefas...</p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

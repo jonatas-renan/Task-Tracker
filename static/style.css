@@ -1,0 +1,125 @@
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: #111827;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  background: #fff;
+  margin: 60px auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  color: #1e3a8a;
+}
+
+p {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+.input-area {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#task-input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#add-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#add-button:hover {
+  background-color: #1d4ed8;
+}
+
+.filter-area {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-area button {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-area button:hover {
+  background-color: #dbeafe;
+}
+
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.task-item {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.task-item:hover {
+  transform: scale(1.02);
+}
+
+.task-text {
+  font-weight: 500;
+  color: #111827;
+}
+
+.task-item.done .task-text {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+.btn-progress { color: #2563eb; }
+.btn-progress:hover { color: #1d4ed8; }
+
+.btn-done { color: #16a34a; }
+.btn-done:hover { color: #15803d; }
+
+.btn-delete { color: #dc2626; }
+.btn-delete:hover { color: #b91c1c; }
+
