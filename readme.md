@@ -1,6 +1,6 @@
 # 🚀 API de Task Tracker (Gerenciador de Tarefas)
 
-Projeto de desenvolvimento full-stack que simula um sistema de gerenciamento de tarefas (To-Do list), construído com um back-end em Python (Flask) e um front-end em HTML, CSS e JavaScript.
+Projeto de desenvolvimento full-stack que simula um sistema de gerenciamento de tarefas (To-Do list), construído com um back-end em Python (Flask) e um front-end em HTML, CSS e JavaScript, desafiado pelo [Roadmap de Python](https://roadmap.sh/projects/task-tracker).
 
 🎯 Objetivo
 
@@ -125,6 +125,7 @@ Para executar este projeto localmente, você precisará ter o **Python 3** insta
     * A interface web (`index.html`) será carregada e você poderá começar a usar o Task Tracker.
 
 ---
+
 
 ## 📂 Sugestões de melhorias / futuras implementações
 
